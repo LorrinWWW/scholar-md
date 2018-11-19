@@ -5,7 +5,7 @@ author:
 - name: "Someone"
   affiliation: University of Somewhere
 geometry: "margin=1in"
-classoption: "twocolumns"
+classoption: ""
 keywords: [keyword1, keyword2]
 abstract: "This is an abstract."
 ---
