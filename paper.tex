@@ -1,0 +1,124 @@
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+
+%
+\documentclass[a4paperpaper,twocolumns]{article}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{dsfont}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provides euro and other symbols
+\else % if luatex or xelatex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\usepackage{hyperref}
+\hypersetup{
+            pdftitle={Example Paper},
+            pdfkeywords={keyword1, keyword2},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage[margin=1in]{geometry}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+%%%% add unicode support
+% SUPPORT for Chinese
+\ifxetex
+\usepackage{hyperref}
+\usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+\usepackage{xeCJK}
+\setCJKmainfont[BoldFont=SimSun]{SimSun}
+\setCJKsansfont[BoldFont=SimSun]{SimSun}
+\setCJKmonofont{SimSun}
+\else
+\usepackage[unicode=true]{hyperref}
+\fi
+
+\title{Example Paper}
+\author{Someone (University of Somewhere)}
+\date{November 2018}
+
+\begin{document}
+\maketitle
+
+\providecommand{\keywords}[1]
+{
+  \small
+  \textbf{\textit{Keywords---}} #1
+}
+
+% abstract
+\hspace{5pt}
+\begin{abstract}
+This is an abstract.
+\\ \\
+\keywords{keyword1, keyword2}
+\end{abstract} \hspace{5pt}
+
+\hypertarget{introduction}{%
+\section{1. Introduction}\label{introduction}}
+
+\hypertarget{math}{%
+\subsection{1.1 Math}\label{math}}
+
+\[
+    \sum{x_i^2 + y_i^3 + 1} = \int{z^4}
+\]
+
+\hypertarget{use-bibliography}{%
+\subsection{1.2 Use bibliography}\label{use-bibliography}}
+
+I mentioned this{[}1{]}, that{[}2{]} and them{[}1,2{]}.
+
+\hypertarget{bibliography}{%
+\section*{Bibliography}\label{bibliography}}
+\addcontentsline{toc}{section}{Bibliography}
+
+\hypertarget{refs}{}
+\leavevmode\hypertarget{ref-bib1}{}%
+{[}1{]} Author A. 2000. Article a. \emph{A journal of XYZ} 45, 4\_ts
+(2000), 100--110.
+
+\leavevmode\hypertarget{ref-bib2}{}%
+{[}2{]} Author B. 2010. Article b. \emph{A journal of FFFFF} 100, 9\_xs
+(2010), 200--210.
+
+\end{document}
